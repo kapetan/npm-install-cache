@@ -1,0 +1,23 @@
+{
+  "name": "npm-install-cache",
+  "version": "1.0.0",
+  "description": "Install node_modules from cache",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kapetan/npm-install-cache"
+  },
+  "keywords": [
+    "npm",
+    "install",
+    "build",
+    "cache"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kapetan/npm-install-cache/issues"
+  },
+  "homepage": "https://github.com/kapetan/npm-install-cache",
+  "bin": {
+    "npm-install-cache": "npm-install-cache.sh"
+  }
+}
