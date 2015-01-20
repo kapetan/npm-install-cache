@@ -1,3 +1,5 @@
+#!/bin/bash
+
 function get_cache_dir() {
 	local cache_id=$(cat package.json | grep '"name"' | sed 's/"name"//; s/[^"]*"//; s/"[^"]*//')
 
