@@ -1,7 +1,7 @@
 #!/bin/bash
 
 function get_cache_dir() {
-	local cache_id=$(cat package.json | grep '"name"' | sed 's/"name"//; s/[^"]*"//; s/"[^"]*//')
+	local cache_id=$(cat package.json | grep '"name"' | sed 's/"name"//; s/[^"]*"//; s/".*//')
 
 	if [ "$cache_id" == "" ]; then
 		cache_id=__misc__
@@ -11,7 +11,7 @@ function get_cache_dir() {
 }
 
 function get_hash() {
-	echo $(shasum package.json | shasum | sed 's/[ \t]*-[ \t]*//')
+	echo $(cat package.json | shasum | sed 's/[ \t]*-[ \t\n]*$//')
 }
 
 function read_hash() {
@@ -31,8 +31,8 @@ function build() {
 	else
 		npm install || exit $?
 		rm -rf "$cache_dir"
-		cp -r "node_modules/" "$cache_dir"
-		echo "$new_hash" > "$cache_dir/package.shasum"
+		cp -r "node_modules/" "$cache_dir" 2> /dev/null || mkdir -p "$cache_dir"
+		echo -n "$new_hash" > "$cache_dir/package.shasum"
 	fi
 }
 
