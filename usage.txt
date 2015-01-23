@@ -1,0 +1,5 @@
+Usage: npm-install-cache [command?]
+
+Available commands:
+  help                      print usage
+  clean [all|<integer>]     remove oldest cached modules
