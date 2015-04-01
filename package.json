@@ -19,5 +19,6 @@
   "homepage": "https://github.com/kapetan/npm-install-cache",
   "bin": {
     "npm-install-cache": "npm-install-cache.sh"
-  }
+  },
+  "preferGlobal": true
 }

@@ -2,7 +2,7 @@
 
 Install `node_modules` from cache on unix-like systems.
 
-	npm install npm-install-cache
+	npm install -g npm-install-cache
 
 ## Usage
 
