@@ -10,8 +10,13 @@ function get_cache_dir() {
 	echo "/tmp/npm-install-cache/$cache_id"
 }
 
+
+function get_versions() {
+	echo '_npm'$(npm --version)'_node'$(node --version)
+}
+
 function get_hash() {
-	echo $(cat package.json | shasum | sed 's/[ \t]*-[ \t\n]*$//')
+	echo $(get_versions | cat - package.json | shasum | sed 's/[ \t]*-[ \t\n]*$//')
 }
 
 function read_hash() {
